@@ -1,0 +1,21 @@
+Referencia:
+
+    - C++ tenta simplificar ponteiros, criando um novo tipo, referencia.
+
+    - Referencia também guarda um ponteiro, mas somente precisamos dizer a variável, pra criar.
+
+    - Sempre inicializa uma referencia apontando para uma váriavel.
+
+    - Uma vantagem de se usar referencia é que voce obriga a passar uma variável existente como parametro, numa função
+      que inicializa valores de referencias.
+
+    - Na hora de passar classe por parametro, e não precisar alterar o valor dessa classe, passar como
+      func(const X& x)
+
+    - Se quiser alterar o valor, passa como a cima, só que sem o const.
+
+    - Isso é menos custoso, pois não fará uma copia da struct/classe.
+
+Null:
+
+    - Null em C++ é nullptr.

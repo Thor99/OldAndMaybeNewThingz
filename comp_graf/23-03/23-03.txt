@@ -1,0 +1,49 @@
+Tranformações
+
+    - Vertice = ponto do plano
+
+    - Qualquer mudança que voce aplica nas coordenadas dos vértices (ponto do plano).
+
+    - Escala:
+
+        - A transformação de escala consiste da alteração do tamanho do vértice
+
+        - Multiplica todos os componentes do vértice pela escala trabalhada.
+
+        - A matriz usada é a matriz de escala: A diagonal principal é composta da sua escala usada (um número real diferente de 0)
+        e o resto da matriz é composta por 0
+
+    - Rotação:
+
+        - Multiplica a matriz que contem os pontos do vértice pela matriz de rotação.
+
+        - Matriz de rotação: [cos @  -sen @]
+                             [sen @   cos@]
+
+        - Matriz acima serve para sentido horário
+
+    - Translação:
+
+        - Mover um vértice do ponto original a outro ponto
+
+        - Adiciona um valor em x e outro em y, podendo os dois valores serem iguais ou não.
+
+        - Para usar matrizes, segue os passos:
+
+            - Considere os pontos do vertice x e y, e os valores a serem adicionados tx e ty.
+
+            - Crie uma matriz [x  y  1]
+
+            - Multiplique a matriz acima pela matriz: [1  0  0]
+                                                      [0  1  0]
+                                                      [tx  ty  1]
+
+            - Isso dará uma matriz resultado:  [x + tx  y + ty  1]
+
+            - Ignora o 1
+
+    - Importante: A ordem com o qual executa as transformações altera o resultado da posição final do vértice
+
+Matriz identidade:
+
+    - Diagonal principal é de 1, e resto da matriz é 0.

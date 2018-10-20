@@ -1,0 +1,120 @@
+Modelo OSI:
+
+	Divide redes em 7 camadas. 
+
+	São as camadas(da mais baixa pra mais alta/mais básica pra mais avançada):
+		- Física
+		- Enlace (Link)
+		- Rede (Network)
+		- Transporte
+		- Sessão
+		- Apresentação
+		- Aplicação
+
+	Uma camada é um serviço que provê recursos(Serviços) pra camada mais alta.
+
+	As três ultimas camadas costumam ser feitas pelo software, e as quatro primeiras pelo hardware.
+
+-----------------------------------------------------------------------------------------
+	
+	Camada Física:
+
+		Objetivo: Codificar e transmitir um byte de informação entre dois pontos, diretamente conectados.
+			  Detectar colisão de dados, porém não trata ela.
+
+		Formas de transmitir o byte:
+
+			- Rede conectada por fio:
+				
+				Conecta dois pontos através de algo físico, como um fio de cobre.
+
+				Ponto A envia tensões, bytes, e ponto B recebe e lê por um voltímetro e depois recria o dado.
+
+				Para por exemplo, poder enviar três sinais "1", nós temos que usar clock. Esse tempo têm que ser igual pros dois pontos.
+
+				Esse clock têm que ser bastante sincronizado, para os dois pontos receberem o mesmo valor, trabalharem com o mesmo valor.
+
+				Tanto quem envia, quanto recebe, tem que trabalhar com intervalos de tempo iguais.
+
+				É muito difícil sincronizar os dois pontos, e pra resolver isso, pode-se:
+					
+					NRZ:
+
+						Usar dois fios entre A e B, um para transmitir os valores(Dados) e outro para o sinal do clock, que serviria para sincronizar os dois.
+
+						O problema é que precisa de um sinal separado de clock, dois sinais.
+
+					Manchester:
+				
+						Codifica as mudanças de nível.
+
+						Uma mudança do nível inferior pro nivel superior, codifica o nivel 1.
+
+						Uma mudança do nível superior pro nivel inferior, codifica o nivel 0.
+
+						Para codificar mais de um sinais iguais(mais de uma sequência de 0, por exemplo), ele antes de enviar os dados, manda o chamado "preâmbulo", uma sequência 							de 0 e 1, no qual a partir da  largura entre eles, conseguimos medir o tempo de clock. 
+
+						Depois de mandar o preâmbulo, mandamos os dados em sí.
+						
+						Normalmente o preâmbulo tem 8 bits, con sequências 0/1 ou 1/0.
+
+						Então, se quisermos mandar por exemplo duas sequências de 0 seguidas, primeiro mandamos uma descida, ai subimos antes de ter a batida de clock, ai na batida 							de clock mandamos uma descida, representando mais um sinal 0. Ou seja, conseguimos mandar mais de um sinal/valor igual em sequência.
+
+		O ponto B também pode querer enviar um byte pra A, e pode ocorrer uma colisão, no qual os dados se misturam.
+
+		Para trasmitir corrente de um ponto pra outro, precisa ter dois fios, um pra positivo e outro pra negativo.
+
+		Podemos ter um cabo só e enviar somente dados por um sentido, como somente A pra B (Simplex). (Unidirecional)
+		
+		Podemos ter um cabo só que envia somente de um lugar pra outro por instante, A pra B ou B pra A, mas existe a chance de mandarem ao mesmo tempo, podendo ter colisão. (Half-Duplex). 			(Bidirecional)
+
+		Podemos ter dois cabos, com dois fios cada, para transmitir nos dois sentidos ao mesmo tempo. (Full-Duplex). (Bidirecional)
+
+		Camada física também têm que definir a "Banda", que é a taxa de transferência, medida em bits por segundo. Para definir isso temos que ver nossa velocidade de clock e nossos equipamentos, 			como os cabos.
+
+		Ao invés de cabo comum, podemos transmitir com mais eficiência em fibra óptica, pois transmite com velocidade próxima da luz e com clocks mais altos, e a longas distâncias.
+
+		A unica diferenca da trasnmissao sem fio, é que envia por antena ao invés de cabos.
+
+
+
+-------------------------------------------------------------------------------
+
+Topologias de redes:
+
+	Barra:
+		Temos uma barra contínua que liga todos os pontos da rede.
+		Topologia totalmente conectada. (todos os pontos conectados entre sí)
+
+	Anel:
+		Pontos da rede são ligados em forma de anel/circular.
+		As pontas/extremos estão ligados.
+		Topologia parcialmente conectada. (Nem todos os pontos estão conectados entre sí)
+
+	Estrela:
+		Todos os pontos estão ligados por todos.
+		Topologia totalmente conectada. (todos os pontos conectados entre sí)
+
+				
+
+				
+
+				
+
+			
+
+				
+
+	
+
+
+		
+
+		
+		
+
+
+
+
+
+		

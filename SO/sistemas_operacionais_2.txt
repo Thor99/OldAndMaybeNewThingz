@@ -1,0 +1,50 @@
+Aula 2:
+
+
+Quando voce tem um recurso, e dois ou mais processos querendo acessar o recurso, eles estao tendo um acesso simultâneo. Quando um dos processos interfere no resultado 
+do(s) outro(s), isso é chamado condição de corrida.
+
+Resolver condição de corrida: Controlar o acesso ao recurso.
+
+Maneiras:
+
+	Exclusão mútua (Mutex):
+ 		Permite que apenas um processo acesse o recurso por vez. O primeiro a chegar ganha acesso ao recurso. Só ao terminar outro processo poderá usar.
+
+		funções: ENTRA_REGIÃO_CRITICA() e SAI_REGIÃO_CRITICA(). Região critica é o recurso, voce esta na região critica ao usar o recurso.
+
+		ENTRA_REGIÃO_CRITICA: Começa a usar um recurso.
+		SAI_REGIÃO_CRITICA: Para de usar o recurso.
+
+		Quando algum processo estiver na região critica, os outros estarão impedidos de entrar nela.
+	
+	Semáforo:
+		N processos podem acessar o recurso, ao invés de só um.
+		
+		Funciona a partir de um número e duas funções que atuam nesse número: DOWN() e UP().
+
+		Esse número mostra o número de vagas que têm no recurso.
+
+		DOWN(): Ela vai decrementar o valor do parâmetro. Porém, a função só fará isso se o valor passado for maior que zero, senão a função bloqueia o processo.
+		
+		UP(): Essa função irá somar um (1) no valor passado no parâmetro se não houver um processo bloqueado. Se houver alguem bloqueado pela função DOWN, ele irá 
+		      liberar o processo bloqueado.
+
+		Um processo chamará a função UP() após usar o recurso, quando acabar de usa-lo.
+
+		Se o parâmetro passado for 1 (N), só um processo podera acessar o recurso, então será usado a exclusão mútua.
+
+Problema de concorrencia: Produtores e consumidores:
+
+	Eu tenho n processos que vão produzir um recurso e x processos que vão consumir os recursos dos produtores. A ideia é que, enquanto não existem coisas para serem 
+	consumidas, os consumidores terão que esperar.
+	
+	Você resolve esse problema com semáforo.
+	
+	No livro de SO mostra em metaprogramação/C, como resolver o problema, na figura 2.2.3 e indice 2.3.5
+
+Problema dos filosofos jantando:
+
+
+
+	

@@ -1,0 +1,322 @@
+Sistema Operacional:
+abstrai o hardware para o desenvolvedor e permite a divisão de recursos entre diferentes usuários e diferentes tarefas.
+
+Antigamente se escrevia diretamente com a linguagem de máquina (assembly), e se passou a escrever em uma linguagem mais abstrata (como C - quase precursor do Unix).
+
+Unix - unificar o sistema para que ele pudesse funcionar em  diferentes hardwares. Parecido com o Prompt de Comando (sem interface gráfica). Originou o Linux e Mac OS. 
+
+MS-Dos - precursor do Windows. Muito usado em PCs.
+
+Linux muito usado em servidores.  
+
+Mac OS e Windows muito usados em casas, por sua interface gráfica dinâmica.
+
+Arquitetura do Sistema Operacional
+
+Software tem duas partes: uma parte chamada de Modo Kernel e outra Modo Usuário (mais próximas da máquina e do usuário, respectivamente).
+Kernel -- HAL (Camada de Abstração do Hardware), responsável por saber qual hardware usado e criar uma abstração do SO para funcionar com softwares diferentes. núcleo.
+A comunicação de HAL e SO se dá pelos Drivers, programas que controlam o hardware. Sobra a parte de gerenciamento do SO, que contém componentes como:
+gerenciamento de processos, memória, arquivos, etc.
+
+Usuário -- tudo que o usuário executa. Contém interface gráfica, programas.
+
+Comunicação entre modos -- específica por SO. Uma delas é a Kernel Monolítico, usada em Linux, Unix e Windows. O programa chama funções do sistema, 
+uma por uma, até chegar no hardware. (como se fosse apenas um
+programa só).
+Outro modo: Microkernel - só um componente, responsável pela comunicação de modos, e entre os componentes do Modo Kernel (mensageiro), de modo que os componentes de um Modo passem para outro.
+O mensageiro tem o controle da memória. Usado por Windows (e um pouco Mac OS).
+
+Monolítico - é um programa só, costuma ser mais eficiente*******, pois chama a função diretamente. Por outro lado, não tem como trocar componentes dele (deveria trocar tudo), já que funciona como um único programa.
+Complica o desenvolvimento, pois é bagunçado - código mais difícil.
+Microkernel - funções mais independentes, melhor de ajustar apenas uma função, mas é mais lento.
+
+Por que o computador está dividido em camadas?
+Os programas não podem interferir no gerenciamente de processos, e são divididos em camadas para não intereferirem no funcionamento do SO.
+O hardware (principalmente processador) funciona em modo Kernel. O processador tem instruções especiais que só o SO pode usar, além de impedir que o programa funcione diretamente
+no hardware. Tudo é feito por intermédio do SO.
+
+O que é um programa? E um processo?
+
+Programa: código que será executado. 
+Processo: programa em execução.
+
+SO lida com os processos. Processos têm estados diferentes. Pode estar:
+
+- em execução; ---- Rodando normalmente, escolhido para executar
+- suspenso; ----- Carregado na memória, mas paralizado (enquanto um está sendo executado)
+- inicializando/terminando;
+
+O SO para dar a alusão de que há vários processos simultâneos rodando no computador, ele faz o Escalonamento de Processos ou Agendamento de Processos. Executa um processo e suspende outros 
+por um período de tempo (muito rápido). 
+Há um tempo, só existia um processador para fazer apenas um processo, e agora há processadores com vários grupos, que executam um processo por vez cada. (simultaneamente). 
+Dentro de um processo, pode ter um Thread (ou mais de um). Thread é uma subdivisão do processo, uma linha de execução. A maioria dos programas tem apenas uma Thread em execução, mas alguns rodam esses 
+threads simultaneamente. As threads rodam muito rápido, por isso que parece que está sendo um processo simultâneo.
+
+
+
+A memória é muito importante em cada processo. O SO tem vários níveis de memória. Dentro do processador, há uma memória muito rápida (registrador). Cada um desses tem um espaço de 4 a 8 bytes (muita pouca 
+informação), mas é a memória mais rápida do PC. Dentro do processador, há também o cache, memória que está distante do registrador. Cache L1 - 8 a 16 kbytes. L2, L3..., cada vez maiores e mais lentos. Para descobrir 
+quanto de memoria há em cada cache, usa-se o programa CPU-Z.
+Depois vem a memória RAM, de 16GB (usualmente), depois HD de 1TB.
+
+Dois tipos de HD: disco rígido e SSD (como um chip de memória, MUITO mais rápido (do que o HD)).
+
+Round-Robin - se dá um tempo igual para os processos na ordem em que os programas estão dispostos. (escalonamento de processos).
+Troca de Contexto - trocar o estado de um processo para outro. Tirar o processo 1 e colocar o processo 2 na memória. Consiste em:
+1 - salvar registradores (a memória mais básica do processador) na RAM.
+2 - carregar registradores do processo seguinte
+Isso em 5 ms!!!
+
+Qual seria o tempo ideal para esse processo (por que deve ser em 5ms?)
+Se for um tempo muito grande, não haverá alusão de multiprocessamento.
+Se for um tempo muito grande, haverá perda útil do processamento (muito tempo na troca de contexto, pouco tempo de desempenho).
+
+Quando existe a necessidade de acessar um processo muito demorado, o processo é tirado da troca de contexto.
+
+Chamada de função especial = chama de sistema (Usuário >> Kermel); demora. Sempre que isso ocorre, o agendador suspende uma troca de contexto (mesmo que os 5ms não tenham se passado).
+
+Interrupção >> o hardware interrompe o que o processador está fazendo, para que haja comunicação entre o hardware e o Modo Kernel.
+Kernel tem uma tabela chamada Vetor de Interrupção que associa o # de Interrupção com o que fazer. Depois que o procedimento está completo, há a comunicação entre Kernel e o Modo Usuário.
+
+A melhor maneira de começar um agendamento de processos é pegar o mais curto primeiro, para diminuir o atraso total dos processos.
+
+Prioridade (outra forma de escalonar processos);
+Quando um processo de maior prioridade impede o funcionamento de outros, ocorre inanição (starvation).
+Pode ser definido um limite máximo de funcionamento de processo, para que não ocorra inanição.
+
+Dois processos querem escrever no mesmo arquivo = não podem fazer isso ao mesmo tempo (misturarão as saídas) - um tem que ser feito primeiro, para o outro funcionar (sincronia de processos).
+
+Dois ou mais processos tentando acessar um Recurso = acesso concorrente; se  um dos dois processos interfere no resultado do outro (se o p1 lê um arquivo e o p2 escrevê-lo), pode acontecer uma "Condição de Corrida" (não ocorre se for o mesmo arquivo e a mesma função, ex: p1 e p2 lendo o arq.)
+Condição de Corrida controlada pelo controle de acesso ao Recurso. Duas maneiras:
+1a maneira -- Exclusão mútua (Mutex): se o Recurso não estiver sendo usado, o primeiro processo que chegar será realizado, e depois nenhum processo poderá ter acesso ao mesmo (só quando o p1 terminar). O SO que faz o controle disso. 
+Ele dará duas funções: 
+a) entra_região_crítica
+b) sai_região_crítica
+
+Região crítica - intervalo de tempo em que o processo tem acesso ao Recurso;
+
+{ erc( ) >> usa o recurso >> src( ) EM P1;
+erc( ) >> em espera (suspenso, travado) >> usa o recurso >> src( ) EM P2;
+erc( ) >> em espera (suspenso, travado) >> em espera (suspenso, travado) >> usa o recurso >> src( ) EM P3; (pode ocorrer de forma aleatória) 
+} protege o acesso.
+
+Função recebe parâmetro específico, relativo a um determinado objeto. Cada recurso tem um Mutex.
+
+Recurso com limite maior que um >> o ERC/SRC NÃO FUNCIONA! (Porque Mutex é só pra limite=1), portanto:
+Semáforo. Duas funções:
+
+down (S) -- decrementa 1 de S se S>0; bloqueia o processo
+up(s) -- soma 1 em S se não houver um processo bloquado, se não libera o processo que estava bloqueado.
+
+Slots = processos;
+S = 3 (vagas no Semáforo (S) disponíveis são 3).
+
+Se S=1, tem-se Exclusão Mútua.
+
+S=2 - D(S) (usa o recurso)/ UP(S) - S = 2;S=1 - D(S), S=0/ UP(S) - S=1; S=0 D(S)......
+
+Sem Mutex = 1(parâmetro) (controla o acesso recurso)
+Sem vazio = 100 (controla o numero de espaços vazios)
+Sem cheio  = 0 (controla o numero de espaçoes cheios)
+
+Loop infinito em C:
+
+Produtor - usado varias vezes ao mesmo tempo
+
+while (1){
+	produz_item()
+	down (vazio) //guardar item produzido no estoque, mas o estoque so pode ser acessado um por vez. 
+	down (mutex)//guardar acesso ao estoque
+	guarda_item()
+	up (mutex)
+	up (cheio)
+}
+
+Repete até o vazio chegar a zero, e quando isso acontece, os produtores são bloqueados (só são liberados pelo consumidor)
+
+Consumidor - pega o item, consome, libera espaço vazio. 
+
+while(1){
+	down(cheio)
+	down(mutex)//consumidor pede para entrar no estoque
+	remove_item()
+	up(mutex)
+	up(vazio)//diz que há um espaço vazio há mais
+	consome_item()
+}
+Se o primeiro down cheio estiver zero, trava o prog. O up em cheio do produtor libera o consumidor. 
+
+Up cheio no produtor libera down cheio no consumidor. Up vazio no consumidor libera up vazio no produtor.
+
+Problema do Jantar dos Filósofos
+
+5 filósofos sentados numa mesa redonda, cada um com um prato de comida, e precisam de dois garfos (cada um) pra comer o negocio, mas só existem 5 garfos na mesa.
+Solução: O filósofo só come se seus dois vizinhos não estiverem comendo.
+6 semáforos (um mutex, e os outros 5 para os filosofos (um cada)).
+
+Barbeiro adormecido - controlar o acesso a cadeiras usando o semáforo.
+3 semáforos: um para controle de clientes, outro pra ver se o barbeiro está acordado ou dormindo, e exclusão mútua.
+
+5 cadeiras
+Sem clientes = 0;
+Sem barbeiro = 0;
+Sem mutex = 1;
+
+barbeiro = 0 == livre;
+barbeiro = 1 == ocupado;
+
+while (1){
+down(clientes);
+down(mutex;
+up(barbeiro);
+up(mutex);
+corta_cabelo()
+}
+
+down(mutex);
+if (clientes<5){
+up(clientes);
+up(mutex);
+down(barbeiro);
+corta_cabelo()
+}
+else{
+up(mutex)
+}
+
+Todo sistema operacional tem função "sleep".
+
+Gerenciamento de memória lida principalmente com a Memória RAM. 
+Um processo para ser executado tem que estar inteiramente carregado na Memória RAM.
+
+Gerencia o funcionamento simultâneo dos programas. A maneira mais simples de fazer isso é...
+
+A memória é endereçável. A Memória RAM é um vetor gigante, e cada índice dela é um processo.
+É mais fácil dividir esse grande vetor quando o sistema operacional tem um número fixo de processos.
+Cada processo tem uma necessidade diferente de uso de memória.
+
+Para serem executados, os processos devem estar na memória RAM.
+Se a memória for pequena, precisamos usar o gerenciamento de memória
+Uma maneira é carregá-lo completamente na memória e depois descarregá-lo para usar o outro (teria que usar a memória inteira).
+Ou pode-se dividir a memória em partes.
+
+Uma maneira: Levar o programa já pronto para o disco e deixar o próximo programa entrar. (troca de programas). Pode demorar muito.
+Resolvendo o problema, criou-se a ideia de abstrair a memória do computador (memória virtual) = cada processo tem a ilusão de que tem toda a memória do computador.
+
+Ao invés de usarmos a memória física, é só criar uma memória virtual. Os processos não terão acesso à memória inteira, e sim a partes dela.
+
+Espaço de endereçamento - quantos endereços o programa vai precisar ocupar na memória. Os programas que não couberem ou não estiverem sendo executados, 
+vão para o disco.
+
+Divide o processo em páginas. (virtual)
+
+A memória RAM també é divida em molduras de página (memória física), é para onde as páginas são mapeadas. 
+
+Dá a alusão de que cada página tem toda a memória possível disponível para seu acesso.
+
+Se vc usa uma página de um processo, vc manda essas páginas para as molduras de página na memória RAM.
+
+O que acontece se não há mais moldura de página disponível, e vc quiser fazer uma nova página em um dos processos.
+
+Faz-se o seguinte: uma página que já foi executada do RAM vai para o disco, e deixa um espaço vazio para a nova página entrar. (troca de página).
+Falta de página - quando a página que vc quer está no disco ao invés na RAM. 
+
+Como traduzir o endereço da memória virtual para a memória física?
+MMU faz isso (fica no processador).
+Tabela de página - parte de SO no processador, gerenciada pelo MMU.
+Tamanho da página da tabela depende da página. obvio...
+
+TLB (Translation Look aside Buffer) vai guardar/salvar as linhas da tabela de página que são mais usadas. Tem espaço para poucas linhas.
+Busca no TLB feita em paralelo, busca a linha instantaneamente. Se uma página não estiver na TLB, busca-se a  linha na Tabela de Página.
+
+Número de endereços da memória equivalente à qntd de memória.
+
+Espaço de endereçamento = 2 elevado ao número de espaços de endereçamento necessários.
+
+Computadores com 32 bits de memória armazenam 2^32 espaços de endereçamento. (que é 4GB). Se um processo tem mais que isso, não pode ser acessado, não há
+como enderaçar algo que pese mais do que a memória (obviamente). Cada processo enxerga a memória inteira.
+
+Se a memória física estiver totalmente ocupada, ele vai pegar uma pagina lá presente e mandá-la para o disco. Assim, outra página pode ser mapeada para a moldura de página.
+
+Falta de página - o processador tentou achar uma página na memória física, mas ela não tava lá (e sim no disco).
+
+Tabela de Página:
+
+Endereço Virtual | Endereço Real | Presente
+400		1		0 - no disco (falta de página)
+				1 - na RAM
+
+TLB - mini tabela de página (com poucas entradas), com a diferença de que ao invés de fazer uma busca de maneira linear, ele busca todas as linhas da TLB paralelamente
+(processo feito pelo hardware).
+
+Se a página for muito pequena, a tabela de página vai ficar muito grande. (e a tabela já ocupa muito espaço).
+Por outro lado, se a página for muito grande, a tabela fica pequena mas cada processo desperdiça muita memória.
+
+Tabela de Página Invertida
+
+Quando a tabela de página é muito grande. Ao invés de mapear endereço virtual para endereço real, ela faz o contrário. (isso é um problema). Porque ao invés de fornecer
+o número de endereços virtuais, fornece o número de endereços reais.
+O acesso dessa tabela é mais lento. Para resolver isso, usa-se outro sistema de busca: Tabela Hash.
+
+Campo extra: Chave (Endereço Virtual -> Hash -> Chave (função matemática)) = busca instantânea, ao invés de ser linha por linha.
+
+Qual é o critério para levar uma moldura de página ao disco? (quando precisarmos executar outra página)
+
+Eu vou tirar a página que vai demorar mais tempo para ser reutilizada, ou seja, adiar ao máximo o uso de uma página. (jeito ideal), mas não poder ser usado, 
+pq não se sabe quando uma página vai ser usada novamente.
+
+NRU - Encontrar a página não recentemente usada (a que foi usada há mais tempo) e descartá-la. 
+Para cada página, colocaremos dois parâmetros:
+Referenciada e Modificada 
+Classe 0: não foi nem referenciada nem modificada no último instante
+Tira-se a que estiver na classe mais baixa.
+
+FIFO - Vai tirar a primeira moldura de página que entrou para que uma nova possa entrar
+Algoritmo ruim, porque não considera o fluxo de uso da moldura.
+o primeiro que entrou vai ser o primeiro a sair. o pior algoritmo.
+Segunda chance - considera o FIFO + bit de referência
+
+Relógio - segunda chance otimizada. A primeira moldura que seria modificada, além de ser modificada e levada para o fim da fila, automaticamente se transforma em última
+da fila, com o girar do ponteiro.
+
+LRU - remove a página que foi usada há mais tempo (p. 145 do livro) considera um histórico maior de tempo. 
+
+objetivo do sistema operacional: abstrair o hardware, dividir os recursos do computador entre vários processos e vários usuários (alusão de multitarefa);
+kernel é a parte do programa que implementa o sistema operacional. 
+os aplicativos funcionam separados do kernel, no modo usuário.
+monolítico - serviços implementados juntos, em um programa só;
+comunicação entre serviços no kernel acontece pelo microkernel. desvantagem: é mais lento, pq a função não é chamada diretamente.
+microkernel bem menor que o monolítico
+exokernel é muito lento, inviável de ser reproduzido. 
+
+
+programas no modo usuário;
+no microkernel: hal (camada de abstração do hardware); serviços de troca de mensagem.
+hardware;gerenciador de memória quer fazer a páginação para o disco, então ele vai precisar usar o serviço do gerenciador de arquivos. então o gm chama a função que precisa do ga (monolítico)
+microkernel - vc pode trocar um serviço sem interferir no funcionamento de outros. no monolítico, defeito em um serviço = defeito em todos.
+o monolítico, como não tem troca de mensagens, é mais rápido. serviços interligados.
+microkernel = chamada de funções; processos e serviços separados.
+gerenciador de processos
+multitarefa - dá a ilusão de que muitos processos estão rodando simultaneamente.
+escalonamento: põe um processo pra rodar um tempo, tira, e põe outro.
+qnd ele põe um processo pra rodar, salva-o na memória,
+chamada de sistema - quando o gerenciador precisa ler algo do disco. 
+algoritmos de escalonamento --- round robin, colocar tudo em ordem, numa fila (Mais simples)
+menor tempo - o que dura mais tempo é o primeiro a rodar, mas só funciona se a gente tem certeza de quanto tempo vai durar
+prioridade - definir uma linha de prioridade, round robin pra quem tem mais prioridade (no caso 0), se não tem o que rodar, vai para o próximo.
+prioridade aleatória - espaço de 1s de tempo, sorteia-se quem pega esse tempo, e a chance de alguém com maior prioridade pegar esse tempo é maior, ou seja, o processo de menor prioridade quase nunca é deixado de ser usado.
+problema da concorrência - condição de corrida: dois processos buscam o mesmo recurso pra acesso, e um deles está escrevendo. se todos tão só lendo, não tem problema. duas ferramentas: exclusão mútua - região crítica onde só um processo pode acessar (o primeiro que chega,
+se esta região está livre). quando não tá, e alguém tenta entrar, essa coisa fica bloqueada.
+semáforos - n vagas dentro de um recurso, o controle é feito por up e down. o semáforo tem um valor inteiro, é inicializado com um valo qualquer. com down, o valor é decrementado em um. se o valor está em zero, e o down é dado, o processo fica suspendo. o up aumenta um no contador, 
+exceto se existirem processos bloqueados, se não, o up desbloqueia qualquer um desses processos. resolve-se problemas de acesso: jantar dos filósofos, consumidores e produtores, problema do barbeiro. 
+gerenciamento de memória: como que o sistema consegue carregar um programa para a memória. o processador só pode executar um programa se ele tiver carregado na memória ram, não pode direto no disco. se cem processos tão na ram, vc pode carregar 100 processos, mas isso n dá, pq tem pouca
+memória p muito processo. pode-se dividir a memória (muito desperdício) ou pode se abstrair a memória (memória virtual) cada processo enxerga a mem[oria como se ele tivesse toda a memória disponível, mesmo não sabendo se a memória física é inteiramente disponível para ele. 
+esse espaço é dividido em outros espaçoes (página), o tamanho é definido pelo sistema operacional. essas páginas são alocadas na memória física em molduras de página (ou seja, essa mp tem o mesmo tamanho da pág). essas molduras tão na ram.
+o sistema vai decidir quais espaçoes de cada processo vão entrar na memória física, ou seja, a memória física vai estar menos ocupada que a outra.  quem não couber, vai substituir alguém e esse alguém vai pro disco. (troca de página - não há exclusão da página, há sempre uma cópia mantida). no windows, 
+isso acontece no pagefile.sys. no linux, ele sempre cria uma partição chamada swap. disco = extensão da memória ram. tudo que n cabe nela, vai pra lá. 
+se um processo que está no disco deve ser executado, ele volta pra ram, pois vai ser trocado por outro processo. 
+quem faz a conversão do endereço virtual para o endereço real da ram? isso é feito pelo mmu. feita pelo harwared com auxílio do software, mas o hw pode fazer isso automaticamente.
+na mmu, há uma tabela de páginas. (mapeia o endereço virtual para o endereço real), e depois vê se o processo tá na memória ram ou ausente. se tiver presente, só ir pra moldura de página. se tiver ausente, é só ir pro disco, pq o processo está lá. 
+vantagem da alteração do tamanho da página: pra menor - muita página, a tabela vai ficar muito grande, muita memória gasta. pra maior - desperdício de memória.
+
+

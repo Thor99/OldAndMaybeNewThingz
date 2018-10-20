@@ -1,0 +1,32 @@
+Usamos para alocar dinamicamente:
+	
+	- tipo variavel = new tipo;
+	
+	- ex:	
+	
+		int n = 10;
+		int* v = new int[n];
+
+	- O "new" aloca o espaço de memória necessária para o tipo requerido
+	
+	- Nós usamos o "delete" para apagar essa variável da memória.
+	
+	- ex:
+	
+		int i = new int;
+		int n = 10;
+		int* vet = new int[n];
+		
+		delete i;
+		delete[] vet;
+		
+	- Sempre que você quiser que uma variavel dure além do escopo de vida dela, você tem que usar alocação dinâmica
+
+Método destrutor:
+
+	- Suponha que temos uma classe Cachorro:
+	
+		- Assim como temos o método construtor Cachorro();
+		
+		- Temos o destrutor ~Cachorro();
+		

@@ -1,0 +1,9 @@
+Sessão:
+  
+      - Estabelece uma sessão de comunicação entre dois pontos.
+      
+      - socket: identificação da conexão tcp (sendo a partir desse número que a msg é enviada ou recebida em determinada sessão). Identificador único do usuário.
+
+      - Função connect + ip ao qual se deseja conectar + porta = número do socket
+
+      - Na UDP essa camada é vazia.

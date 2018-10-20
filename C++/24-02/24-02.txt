@@ -1,0 +1,28 @@
+- Uma struct ou classe em C++, além de conter as variáveis, como na struct de C, passará a conter funções.
+
+- As funções que estão dentro da classe ou da struct, em C++, são chamadas de funções membro ou métodos.
+
+- Na struct de C++ não precisa mais fazer typedef.
+
+- As funções que estão na struct em C++ tem acesso as variáveis declaradas na struct.
+
+- A gente pode especificar em C++ o escopo de cada membro de uma classe ou struct.
+
+- Têm três tipos de escopo:
+  - public:
+    - Todos têm acesso
+
+  - protected:
+    - A propria classe/struct + classes/structs derivadas têm acesso.
+
+   - private:
+    - Só a própria classe/struct têm acesso.
+
+
+- Diferenças entre struct e class:
+
+  - Na struct, por padrão, todos os membros são públicos.
+
+  - Na classe, por padrão, todos os membros são private. 
+
+- Todo atributo deverá começar com m_ e depois vir o nome da variável.

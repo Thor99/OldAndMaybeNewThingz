@@ -1,0 +1,9 @@
+Mapeamento de textura:
+
+  - Existe um atributo por vertice, que é a coordenada de textura.
+
+  - Na textura, o canto inferior esquerdo da imagem é o (0,0) e o superior direito (1,1)
+
+  - No opengl, chama a coordenada de textura antes do glVertex, pra se aplicar ao vertice abaixo.
+
+  - Usa a função glTextCoord2f(x, y);

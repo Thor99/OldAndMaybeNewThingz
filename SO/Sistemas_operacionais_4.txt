@@ -1,0 +1,73 @@
+Gerenciamento de memória:
+	
+	Vai lidar principalmente com a memória RAM, a principal memória do PC
+	
+	OBS: Uma parte da RAM é reservado ao sistema operacional
+
+	Podemos imaginar a memória RAM como um vetor, em que cada byte de memória tem um endereço. Cada byte tem uma "posição", um endereço.
+	
+	Qualquer programa tem que ser totalmente carregado na memória antes de ser executado.
+	
+	Maneiras para administrar memória:
+
+		Maneira mais simples pra gerenciar memória é que só um programa esteja usando a memória RAM.
+		
+		Porém, se tiver mais de um processo:
+
+			1-) A maneira mais simples para gerenciar varios processos na memória RAM é dividir a memória para que cada processo possa usar um pouco dela.
+			
+			    
+			2-) Cada processo usa a memória RAM de uma vez, e quando acabar ele vai pro disco e outro processo entra.
+			    É ruim pois é demorado essa troca pro disco.
+			
+			3-) Se cria o conceito de memória virtual, que é uma extensão da memória RAM.
+			    Cada processo tem a impressão que estão usando a memória inteira, porém esta usando um espaço virtual.
+
+			    Cada processo tem um espaço virtual muito grande divididas em pedaços, chamados de páginas, que serão mapeadas pra RAM. (página do windows tem 4KB)
+			    O conteúdo das páginas que estão sendo usadas são passadas para divisões da memória física(RAM), chamados "molduras de páginas", que possuem o mesmo tamanho da página.
+
+		            Se houver mais página que moldura de página, alguma página será jogada pro disco e naquele espaço vazio da RAM entrará uma página diferente.
+
+		            Quando a página que queremos esta no disco e não na RAM, é chamado de falta de página, e precisamos fazer uma troca disco-RAM para o problema ser corrigido.
+
+			    O MMU(Unidade de gerenciamento de memória) tem a capacidade de traduzir o endereço virtual para o endereço real, da memória física. (MMU: Virtual --> Real)
+
+			    O MMU geralmente fica no processador.
+
+			    O MMU usa uma tabela de página para essa tradução. (Tabela de página normal: Virtual --> Real)
+
+			    Cada processo terá a sua tabela de página.
+
+		    	    Essa tabela fará uma associação, entre o número da página e o número da moldura da página.
+
+			    Nessa tabela terá uma associação entre endereço virtual e endereço real, e uma coluna que recebe os valores 0 ou 1, que dirá se a página esta no disco(0) ou na RAM(1)
+
+			    Essa tabela de página fica guardada na parte do SO na RAM.
+
+			    Para buscar uma página o MMU usa o TLB (Translation lookaside buffer), que verifica nas 16/32/64 linhas mais usadas da tabela de página pela página, e se não achar ela faz uma 				    busca normal na tabela
+	
+			    Com sistemas muito grandes, como de 64 bits, ocorre um problema, que é ter tabela de páginas muito grandes.
+
+			    Para resolver o problema se usa a tabela de páginas invertidas, que mapeia o endereço da memória real pra virtual. Tabela de pagina invertida (Real --> Virtual)
+
+			    Ou seja, tem como entrada as molduras de páginas, que são em quantidade, bem menores que páginas em sí.
+
+			    O sistema de buscas fica lento usando tabela de páginas invertidas.
+
+			    Para otimizar a velocidade da busca, se usa um sistema de hash, chave valor.
+
+			    Nesse sistema, você põe o endereço da memória virtual e o hash manda um inteiro como resposta. Acessando o inteiro, você consegue achar o endereço real.
+
+
+
+
+			    
+			    
+				
+			    
+			    
+			
+
+	
+		
+		 

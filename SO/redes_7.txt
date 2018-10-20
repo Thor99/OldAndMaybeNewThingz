@@ -1,0 +1,5 @@
+Aplicação:
+
+	- Programa em sí/Ou serviço que se deseja prover.
+    
+    	- Exemplos de aplicação: HTTP, HTTPS, FTP, SMTP, SSH

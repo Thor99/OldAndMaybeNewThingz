@@ -1,0 +1,188 @@
+Camada de enlace:
+
+	Objetivo: Fazer a comunicação entre dois ou mais pontos que estejam diretamente conectados (Mesmo enlace).
+
+	A camada têm que identificar cada dispositivo conectado da rede, individualmente.
+
+	Enlace: Meio que liga dois ou mais computadores.
+
+	Essa camada lida com a colisão alertada pela camada física.
+
+	Essa camada fornece um algoritmos para tratar colisões:
+
+		CSMA:
+	
+			- Antes de enviar ele verifica se o meio está em uso, por meio de correntes elétricas.
+
+			- Se sim, espera.
+			
+			- Senão, envia.
+			
+			- Esse algoritmo é ruim, pois ainda assim é possivel ter colisão, com dois computadores vendo que o meio está livre e enviando ao mesmo tempo.
+
+			- E mesmo havendo colisão, o algoritmo espera o envio de dados terminar, não o interrompendo.
+
+			- E os computadores, se não usarem o bynary exponential backoff, tem intervalos de tempo iguais para reenviar os dados, continuando a colisão.
+
+			- O bynary exponential backoff é um tempo aleatório que o computador usa para tentar reenviar os dados, e se não conseguir, esse tempo aumenta, evitando mais ainda a colisão.
+
+			- Isso faz com que o envio de dados possa se tornar lento, com o bynary exponential backoff de intervalo de tempo grande.
+
+		CSMA/CD:
+
+			- Possui colision detection.
+
+			- Usa o bynary exponential backoff.
+
+			- Faz a mesma coisa que o CSMA, porém durante o envio testa se há colisão.
+			
+			- Se sim, para o envio de dados e gera um sinal de colisão (JAM signal), para o outro dispositivo também perceber a colisão e parar o envio de dados. (Serve para dispositivos mais 				  lentos que outros).
+
+			- Pode não funcionar bem numa rede sem fio, devido ao problema do nó oculto (Nó = dispositivo).
+
+			- Por exemplo, tem tres dispositivos, A, B e C. O sinal de A só chega até B e o de C também só chega até B. Com isso, A e C não sabem que ta tendo colisão, e B fica se ferrando. Ou 				  seja, A está oculto pra C e vice-versa.
+
+			- Mais usada para conexões com fio.
+
+		CSMA/CA:
+
+			- Mesma coisa do CSMA/CD +
+			
+			- Possui um sinal de controle.
+
+			- Antes do envio de dados, o dispositivo pede autorização para poder enviar dados pra outro.
+
+			- Só envia se receber resposta positiva do dispositivo que chegarão os dados.
+
+			- O dispositivo pode não aceitar o pedido, pois o pedido de autorização pode sofrer colisão, e então o mesmo não responde, fazendo com que o dispositivo que quer enviar os dados 				  interpreta isto como uma negação ao pedido. E também pode negar por já estarem eviando dados pra ele.
+
+			- Mais usada para conexões sem fio.
+
+
+		Podem ter algoritmos específicos:
+
+			Rede em anel:
+  
+				Usa o Token Ring:
+
+					- Existe um token que fica com cada dispositivo da rede, e só quem está com o token pode enviar os dados.
+
+					- Esse token vai sendo passado de tempo em tempo.
+
+					- Funciona bem em anel, pois o ultimo dispositivo é conectado ao primeiro, não gerando um grande delay pra ninguém.
+
+			Ilhas do havaí:
+
+				Aloha:
+
+					- Usa um Token Ring adaptado a redes sem fio
+				
+					- Cada dispositívo tem um slot de tempo pra enviar dados, evitando colisão.
+
+
+			Redes de celular:
+
+				TDM:
+		
+					- Divide o tempo em intervalos bem pequenos, para enviar os dados do cliente. 
+
+					- Cada usuário só pode agir no seu tempo.
+
+					- Ocorre em loop, quando acaba uma sequencia, o primeiro volta a usar.
+
+				FDM:         
+
+					- Cada usuário tem dois slots de frequencia específica, um pra enviar e outro pra receber.
+
+					- Cada um envia em um canal de frequencia diferente, evitando colisão.
+
+	
+	Como os computadores são indentificados pela camada de enlace:
+		
+		É criado o Endereço de rede (MAC):
+				
+			- Endereço de cada computador, unico no mundo inteiro.
+	
+			- Esse endereço é chamado de endereço MAC.
+
+			- Endereço de 6 bytes.
+
+			- Normalmente é representado em hexadecimal.
+
+			- Para descobrir o endereço MAC do seu pc no windows: ipconfig /all
+
+			- Mas como se envia uma mensagem para outro computador?
+				
+				- Primeiro se codifica um bloco de bytes, chamado de "Frame" (Quadro).
+				
+				- Essa codificação é feita pela camada física.	
+
+				- Esse frame vai conter:
+
+					- Preâmbulo (8 bytes) (camada física): Sinal que faz o computador sincronizar os clocks. Faz parte da camada física.
+
+					- MAC do destino (6 bytes): Para onde queremos enviar a mensagem.
+
+					- MAC da origem (6 bytes): De onde é enviada a mensagem.
+
+					- Tamanho dos dados (2 bytes): Tamanho dos seus dados.
+
+					- Dados (tamanho varia) (maximo 1500 bytes) (MTU: maximum transmission unity): Dados em sí.
+
+					- FCS (Frame check sequence) (4 bytes): Um número que serve para verificar se o que o dispositivo remetente enviou é o que está sendo recebido pelo dispotivo de 						  destino. Ethernet usa o algoritmo CRC32, que aplica diversas funções matematicas na sequência de frame recebida e retorna um numero de 4 bytes. Ele é computado 						  pela origem e verificado pelo destino.
+
+					- IFS (4 bytes) (camada física): Intervalo de tempo para o dispositivo de destino analisar um frame e começar a analisar outro. 
+				
+			- Se o MAC destino estiver FF FF FF FF FF FF, o dispositivo origem mandará o frame para todos os dispositivos da rede (broadcast).
+
+			- Como saber o endereço MAC do amiguinho?
+			
+				- Existe um protocolo na camada de enlace, o protocolo ARP, protocolo de resolução de endereço, que tem o objetivo de descobrir o endereço MAC a partir do endereço IP.
+
+				- Como ele funciona:
+
+					- Quando nos conectamos na rede se criará um quadro no enlace local, que emite por broadcast esse quadro, que possui o endereço MAC e IP do computador e pede o 					  endereço IP e MAC de cada computador que está no enlace.
+
+					- Então o ARP criará um quadro igual ao frame normal, porém aumenta o valor do tamanho dos dados, e com isso a camada de enlace de todos os dispotivos da rede 						  saberá que esse é um quadro especial do ARP.
+
+					- Depois de receber o endereço de todo mundo o ARP cria uma tabela com o endereço MAC e IP de todos na rede.
+
+					- No windows podemos ver essa tabela com "arp -a".
+
+
+	Como ligar varios dispositivos na camada de enlace:
+
+		- Se usa HUB ou Switch, que ligam varios computadores no mesmo enlace.
+
+		- HUB(concentrador)/Switch(comutador).
+
+		Hub:
+
+			- Pega a mensagem e envia pra todo mundo.
+
+			- Envia os dados pela camada física.
+
+			- Atua na camada física.
+
+			- Não sabe que existe o endereço MAC.
+
+			- Se tem muita gente na rede vai ter colisão.
+
+		Switch:
+	
+			- Envia somente apenas para o destino.	
+
+			- Atua na camada de enlace.
+
+			- Conhece aquela tabela que o ARP cria.
+			
+			- Mais caro que o HUB, porém tem o desempenho melhor.		
+
+			- Evita colisão.
+
+		- Quase ninguém usa mais HUB.
+			
+
+	
+
+	

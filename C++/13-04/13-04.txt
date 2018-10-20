@@ -1,0 +1,87 @@
+Templates:
+
+  - Template tem a função de gerar variaveis no código que não guardam valores, mas tipos.
+
+  - Essas variáveis são definidas durante a compilação.
+
+  - Ex:
+
+      template <typename T>
+
+      T soma(T a, T b)
+      {
+        return a + b;
+      }
+
+      soma(2, 3);
+      soma(2.5, 3.9);
+
+  - Poderiamos forçar um tipo de retorno também:
+
+  Soma<int>(3.6, 7.2);
+
+  # Nesse caso, o compilador tentaria converter de double pra int
+
+  - Podemos também passar constantes no template:
+
+      template<int N>;
+      Soma<3>(3);
+
+  - Especialização de um template: Serve para dizer que se utilizar um tipo específico, usa um código diferente do original
+
+    - Ex:
+        template <typename T>
+
+        T Soma(T a, T b)
+        {
+          return a + b;
+        }
+
+        template<>
+        int Soma(int a, int b)
+        {
+          return 0;
+        }
+
+        - Nesse caso, se passase dois ints nos parametros, retornaria 0.
+
+    - Se a função não pedisse parametros, deveria por uma constante antes da chamada.
+      - ex:
+        template <typename T>
+        T f()
+        {
+          ....
+        }
+
+        template<>
+        int f<int>()
+        {
+          ...
+        }
+
+    - Ex:
+
+      template <int N>
+
+      int Soma(int x)
+      {
+        return x + N;
+      }
+
+      template<>
+      int soma<3>(int x)
+      {
+        return 10;
+      }
+
+      - Nesse caso, se a constante passada for 3, sempre retornará 10
+
+  -----------------------------------------------------
+
+  Templates em classes:
+
+      - Quando uma classe é template, o código dela tem que estar inteiramente no .h
+
+      - A classe template não tem como deduzir parametro, então temos que obrigatoriamente dizer o parametro do template:
+          - X<int> x;
+          

@@ -1,0 +1,48 @@
+Gerenciamento de memória(Continuação):
+	
+	Troca disco-RAM(swap)(algoritmos):
+   		
+		1-) Vê qual página que será usada mais pra frente, e troca-la com o disco, adiando uma falta de página.
+		    Esse algoritmo não tem como ser implementado, já que não temos bola de cristal.
+		
+		2-) NRU(não recentemente usado)
+		    Encontrar a página que não foi recentemente usada, e troca-la com o disco.	
+		    Para fazer isso, cada página é classificada em classe 0, 1 ,2 ou 3 
+		    Para fazer essa classificação botamos dois parâmetros, um bit "referenciada" e um bit "modificada"
+		    Referenciada: lida, sem alterar conteúdo. Modificada: Conteúdo modificado.
+		    Classe 0: Nem Referenciada, nem Modificada
+		    Classe 1: Nem Referenciada, mas Modificada
+		    Classe 2: Referenciada, mas não Modificada
+		    Classe 3: Referenciada e Modificada
+		    Ocorre uma troca de classes a cada intervalo de tempo.
+		    A classe 0 é a classe que menos queremos manter e a 3 é a que queremos manter por mais tempo.
+		    Memso com esse sistema, pode ser tirado páginas que serão usadas daqui a pouco.		
+		
+		3-) FIFO(first in - first out)
+		    "O primeiro que entra é o primeiro que sai"
+		    Se tiver que ocorrer uma troca RAM-disco, a página que entrou primeiro será lançada pro disco.
+		    Esse algoritmo é muito ruim, pois o algoritmo não considera se a página está sendo muito usada ou não.
+
+		4-) Segunda chance
+		    É a implementação do FIFO mais melhorada.
+		    Ocorre a criação de um bit na página, dizendo se ela foi referenciada recentemente ou não.
+		    Ele percorre a fila dos que entraram primeiro até os que entraram mais recentemente na RAM, porém se o bit estiver um, ele da uma segunda chance e seta ele como 0.
+		    Ao setar como 0, a página vai pro final da fila.
+		    Se ao percorrer de novo ele estiver 0, ele irá pro disco.
+
+		5-) Relógio
+	    	    Funciona como o segunda chance.
+		    Organiza as páginas da RAM em forma circular.
+		    O ponteiro vai apontando pras páginas e confere o bit de referenciado, assim como o segunda chance.
+		    A diferença é que não precisa ficar jogando as páginas pro final da fila, já que está em forma de relógio.
+	  	    Quando o ponteiro sair da página, a página já estará no final a fila.
+
+		6-) LRU(least recently used)
+		    Pra cada página será guardado a ultima vez que ela foi usada.
+		    A página que foi usada a mais tempo atrás será removida.
+
+		7-) LRU por idade
+		    Cada página tem uma idade(timestamp), que diz uma aproximação do ultimo uso da página em binário
+		    A cada clock do relógio, o bit R(referenciado) da página irá pra frente da idade, e o ultimo bit da idade será descartada.
+		    Quando precisar de uma troca RAM-disco, se converterá a idade em binário para decimal.
+		    Quem tiver o menor número será removido.

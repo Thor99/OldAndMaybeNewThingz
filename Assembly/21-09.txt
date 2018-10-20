@@ -1,0 +1,170 @@
+Arquitetura x86:
+
+	Duas sintaxes conhecidas, da INTEL e do LINUX.
+
+	Aprenderemos da INTEL.
+
+	8 registradores de uso geral (no x64 tem 16)
+
+	registradores são espécies de variáveis que os processadores usam.
+
+	registradores são uma memória rápida.
+
+	8 registradores do x86:
+
+		- EAX
+
+		- EBX
+
+		- ECX
+
+		- EDX
+
+		- ESI
+
+		- EDI
+
+		- ESP
+
+		- EBP
+
+	Toda instrução em assembly x86 com sintaxe da intel segue o padrão:
+
+		[INSTRUÇÃO] [OPERANDO1] , [OPERANDO2]
+
+	Inicializar uma variável com um valor:
+
+		MOV DESTINO , ORIGEM
+
+		Ex: move 0 pra EAX
+
+			MOV EAX , 0 
+
+	Incrementar o valor de uma variável:
+
+		ADD DESTINO , ORIGEM	
+
+		Ex: Adiciona 3 em EAX
+
+			ADD EAX , 3
+
+	Decrementar o valor de uma variável:
+
+		SUB DESTINO , ORIGEM	
+
+		Ex: Decrementa 3 em EAX
+
+			SUB EAX , 3
+
+	Multiplica o valor de uma variável:
+
+		IMUL DESTINO , ORIGEM	
+
+		Ex: Multiplica o valor de EAX por 3
+
+			IMUL EAX , 3
+
+	Condições:
+		/*	
+		JE ==
+		JL < 
+		JG >
+		JLE <=
+		JGE >= 
+		JNE !=
+		JMP simplesmente pula (incondicional)
+		*/
+
+			CMP EAX , 3 ; Guarda o resultado da comparação
+			JNE
+			MOV EBX , 5
+		fim_se:
+			MOV EAX , EBX
+
+	C para Assembly:
+
+	// a = eax ; b = ebx;
+
+	if(a > 0){
+		b = a * 3;
+	} else {
+		b = 0;
+	}         
+
+	a = b; 
+
+
+		CMP EAX , 0
+		JLE ELSE
+		MOV EBX , EAX
+		IMUL EBX , 3
+		JMP FIM
+	ELSE:
+		MOV EBX , 0
+	FIM:
+		MOV EAX, EBX  
+	-----------------
+	if(a > 0){
+		b = a * 3;
+	} else if(a < 0){
+		b = -a * 3;
+	} else {
+		b = 0;
+	}         
+
+	a = b; 
+
+
+		CMP EAX , 0
+		JLE ELSEIF
+
+		MOV EBX , EAX
+		IMUL EBX , 3
+		JMP FIM
+
+	ELSEIF:
+		; CMP EAX , 0
+		JE ELSE
+		IMUL EAX , -1
+		MOV EBX , EAX
+		IMUL EBX , 3
+		JMP FIM
+
+	ELSE:
+		MOV EBX , 0
+
+	FIM:
+		MOV EAX, EBX  
+
+	--------------
+	a = 0;
+	while(a < 5){
+		a++;
+	}       
+	b = a;
+
+		MOV EAX , 0
+	WHILE:
+		CMP EAX , 5                         
+		JGE FIM_WHILE
+		ADD EAX , 1
+		JMP WHILE
+	FIM_WHILE:
+		mov ebx , eax
+
+	-------------------
+
+	for(i = 0; i < 10; 1++){
+		a += i * i; 
+	}
+
+		MOV ECX , 0
+	FOR:
+		CMP ECX , 10                         
+		JGE FIM_FOR
+		MOV EDX , ECX
+		IMUL EDX , ECX
+		ADD EAX , EDX
+		ADD ECX , 1
+		JMP FOR
+	FIM_FOR:

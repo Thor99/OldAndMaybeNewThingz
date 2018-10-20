@@ -1,0 +1,19 @@
+Definição de computação gráfica:
+  - Geração e processamento de imagens com o computador.
+
+Pixel:
+  - Unidades indivisíveis da imagem.
+
+  - Todos os pixels são compostos de verde, vermelho e azul.
+
+Placa gráfica (GPU):
+  - Têm um processador exclusivo para realizar os calculos matemáticos que irão gerar as imagens.
+
+  - GPU é cerca de 20000 vezes mais rápido que um processador comum, pois têm muito mais núcleo, e cada núcleo é especializado em
+  processamento de números.
+
+OpenGL:
+  - Biblioteca com varias funções para fazer desenhos usando a GPU.
+
+GLUT:
+  - Biblioteca auxiliar para você criar janelas, receber input do mouse e do teclado, e outras funcionalidades de interface

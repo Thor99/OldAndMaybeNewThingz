@@ -1,0 +1,39 @@
+C:
+
+int soma(int a, int b)
+{
+	return a + b;
+}
+
+int main()
+{
+	int x = soma(2, 3);
+}
+
+
+Assembly:
+
+; função soma
+push ebp
+mov ebp, esp
+
+mov EAX, DWORD PTR [EBP + 8]
+mov EAX, DWORD PTR [EBP + 12]
+
+mov ESP, EBP
+pop EBP
+ret 0
+
+; função main
+
+sub esp, 4 ;reserva x
+push 3
+push 2
+call soma
+mov [ESP], EAX
+
+; call {
+;	push EIP
+;	jmp &soma
+;}
+

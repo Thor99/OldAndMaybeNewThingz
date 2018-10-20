@@ -1,0 +1,630 @@
+SPOJ:
+
+http://br.spoj.com/problems/NOTA09/
+
+http://br.spoj.com/problems/JPNEU/
+
+http://br.spoj.com/problems/JBUSCA12/
+
+http://br.spoj.com/problems/SOMA/
+
+http://br.spoj.com/problems/JTACOGRA/
+
+http://br.spoj.com/problems/CONTA1/
+
+http://br.spoj.com/problems/FATORIA2/
+
+http://br.spoj.com/problems/BAFO/
+
+http://br.spoj.com/problems/CARTAS14/
+
+http://br.spoj.com/problems/NOTAS14/
+
+http://br.spoj.com/problems/METEORO/
+
+http://br.spoj.com/problems/LOTICA/
+
+http://br.spoj.com/problems/PAR/
+
+http://br.spoj.com/problems/JGARCOM/
+
+http://br.spoj.com/problems/COFRE/
+
+http://br.spoj.com/problems/QUERM/
+
+http://br.spoj.com/problems/PRIMO/
+
+http://br.spoj.com/problems/CORRID12/
+
+http://br.spoj.com/problems/CORRID13/
+
+http://br.spoj.com/problems/PALAVRMG/
+
+http://br.spoj.com/problems/CARNA12/
+
+http://br.spoj.com/problems/JSEDEX/
+
+http://br.spoj.com/problems/BIT/
+
+http://br.spoj.com/problems/AERO/
+
+http://br.spoj.com/problems/JESCADA/
+
+http://br.spoj.com/problems/VIVO/
+
+http://br.spoj.com/problems/ESTAGIO/
+
+http://br.spoj.com/problems/FROTATAX/
+
+http://br.spoj.com/problems/JDENTIST/
+
+http://br.spoj.com/problems/ENERGIA/
+
+http://br.spoj.com/problems/TROIA13/
+
+http://br.spoj.com/problems/TARZAN12/
+
+http://br.spoj.com/problems/MITO09/
+
+http://br.spoj.com/problems/FUGIT09/
+
+http://br.spoj.com/problems/COMETA2/
+
+http://br.spoj.com/problems/ELEVADO2/
+
+http://br.spoj.com/problems/QUADRAD2/
+
+http://br.spoj.com/problems/PARPROX/
+
+http://br.spoj.com/problems/FLIPERAM/
+
+http://br.spoj.com/problems/MINHOCA/
+
+http://br.spoj.com/problems/OBIHANOI/
+
+http://br.spoj.com/problems/DOBRA/
+
+http://br.spoj.com/problems/PEDAGIO/
+
+http://br.spoj.com/problems/PESCA11/
+
+http://br.spoj.com/problems/BOLSA/
+
+http://www.spoj.com/problems/ELIS/
+
+http://br.spoj.com/problems/REUNIAO2/
+
+http://br.spoj.com/problems/PIZZA07/
+
+http://br.spoj.com/problems/LINGUA14/
+
+http://br.spoj.com/problems/AUTO08/
+
+http://www.spoj.com/problems/PFDEP/
+
+http://br.spoj.com/problems/REDOTICA/
+
+http://br.spoj.com/problems/OBI8/
+------------------------------
+
+URI:
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1551
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1546
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1547
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1221
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1555
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1548
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1043
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1340
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1923
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1034
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1936
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1002
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1030 (FEITO**)
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1103
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1104
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1310
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1028
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1306
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1279 (FEITO**)
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1161
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1022
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1025
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1487
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1148 (FEITO**)
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1003
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1004
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1005
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1006
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1007
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1008
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1009
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1010
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1957
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1105
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1081
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1087
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1091
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1234
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1011
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1012
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1013
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1014
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/2059
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/2060
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/2061
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/2057
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1873
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1238
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1015
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1016
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/2063
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1110
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1323
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1483
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1017
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/2057
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/2029
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1169
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1214
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1393
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1429
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1790
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1940
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/2027
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1036
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1157
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1020
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1035
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1038
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1019
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1175
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1069
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1980
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1129
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1140
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1068
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1042
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1044
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1046
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1073
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1197
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1162
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1064
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1072
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1075
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1078
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1116
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1132
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1244
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1251
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1905
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1861
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1663
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1547
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1281
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1553
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1121
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1288
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1764
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1259
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1258
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1286
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1170
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/2026
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1211
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1430
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1260
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1401
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1566
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1070
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1080
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1924
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1763
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1114
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/2162
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1171
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/2164
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/2160
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/2165
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1192
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1261
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1449
+----------------------------
+
+Hackerrank:
+
+https://www.hackerrank.com/challenges/connected-cell-in-a-grid/
+
+https://www.hackerrank.com/challenges/bfsshortreach
+
+https://www.hackerrank.com/challenges/caesar-cipher-1
+
+https://www.hackerrank.com/challenges/icecream-parlor
+
+https://www.hackerrank.com/challenges/primsmstsub
+
+https://www.hackerrank.com/challenges/merging-communities
+
+https://www.hackerrank.com/challenges/kruskalmstrsub
+
+https://www.hackerrank.com/challenges/dijkstrashortreach
+
+https://www.hackerrank.com/challenges/fibonacci-modified (só a parte do BigInteger que n rolou, é zoada)
+
+https://www.hackerrank.com/challenges/stockmax
+
+https://www.hackerrank.com/challenges/red-john-is-back
+
+https://www.hackerrank.com/challenges/coin-change
+
+-----------------------
+Codeforces:
+
+http://codeforces.com/problemset/problem/189/A
+
+http://codeforces.com/problemset/problem/4/A
+
+http://codeforces.com/problemset/problem/158/A
+
+http://codeforces.com/problemset/problem/50/A
+
+http://codeforces.com/problemset/problem/231/A
+
+http://codeforces.com/problemset/problem/282/A
+
+http://codeforces.com/problemset/problem/116/A
+
+http://codeforces.com/problemset/problem/266/A
+
+http://codeforces.com/problemset/problem/133/A
+
+http://codeforces.com/problemset/problem/160/A
+
+http://codeforces.com/problemset/problem/236/A
+
+http://codeforces.com/problemset/problem/148/A
+
+http://codeforces.com/problemset/problem/122/A
+
+http://codeforces.com/problemset/problem/467/A
+
+http://codeforces.com/problemset/problem/119/A
+
+http://codeforces.com/problemset/problem/263/A
+
+http://codeforces.com/problemset/problem/682/B
+
+http://codeforces.com/problemset/problem/540/A
+
+http://codeforces.com/problemset/problem/682/A
+
+http://codeforces.com/problemset/problem/337/A
+
+http://codeforces.com/problemset/problem/580/A
+
+http://codeforces.com/problemset/problem/489/B
+
+http://codeforces.com/problemset/problem/651/A
+
+---------------
+
+UVA:
+
+https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=448
+
+-----------------
+
+OBI's passadas:
+
+Truco - 2006 - F1
+
+Colchão - 2012 - F1
+
+Frequência na aula - 2012 - F1
+
+Tarzan - 2012 - F1
+
+OBI - 2008 - F1
+
+Telefone - 2008 - F1
+
+Avião - 2008 - F1
+
+Ogros - 2008 - F1
+
+Notas da prova - 2009 - F1
+
+Caçadores de mitos - 2009 - F1
+
+O fugitivo - 2009 - F1
+
+Cobra coral - 2015 - F1
+
+Quebra-cabeça - 2015 - F1
+
+Cometa - 2010 - F1
+
+Elevador - 2010 - F1
+
+Dobradura - 2003 - F1
+
+Notas da prova - 2009 - F1
+
+Bafo - 2005
+
+Cartas - 2014 -  F1 (Nível Universitário)
+
+Notas - 2014 - F2
+
+Meteoros - 2001
+
+Leitura ótica - Primeira fase da Maratona de Programação - 2010
+
+Par ou impar - 2004
+
+Cofrinhos da vó vitoria - 2003
+
+Quermesse - 2000
+
+Palavras ordenadas - Maratona Mineira 2013
+
+Vivo ou morto - 2005
+
+Aeroporto - 2002
+
+Bits trocados - 2000
+
+Estagio - 2003
+
+Frota de taxi - 2005 (N1)
+
+Dentista - 2010 - F2 (N2)
+
+Energia - 2005
+
+Familias de troia - 2013 - F2
+
+Tarzan - 2012 - F1
+
+Caçadores de mitos - 2009 - F1
+
+O fugitivo - 2009 - F1
+
+Cometa - 2010 - F1
+
+Elevador - 2010 - F1
+
+Pontos - Treino OBI 2006
+
+MInhocas - 2005 (N1)
+
+Torres de hanoi - 2003
+
+Dobradura - 2002
+
+Pedagio - 2002
+
+O mar não esta pra peixe - 2011 - F1
+
+Reunião - 2010 - F1
+
+Pizza - 2007 - F2
+
+A lingua do p - 2014 - F1
+
+Auto estrada - 2008 - F2
+
+Fitas coloridas - 2015 - F1 - N1
+
+Arquivos - 2015 - F1 - N1
+
+Expressões - 2011 - F2 - N2
+
+Reduzindo detalhes no mapa - 2011 - F2 - N2
+
+Quadrado mágico - 2011 - F2 - N2
+
+Telescopio - 2010 - F2 - N2
+
+Multiplicação de Matrizes - 2010 - F2 - N2
+
+Chocolate em Barra - 2015 - F2 - N2
+
+Soma das casas - 2012 - F2 - N2
+
+Janela - 2013 - F2 - N2
+-------------------------------------------------------------
+Fazer:
+
+https://www.hackerrank.com/challenges/hr-city
+
+https://www.hackerrank.com/challenges/maxsubarray
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1611
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1167
+
+----------------------------------------------------------------
+PÓS-OBI - Não conseguidas:
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1224 (DP)
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1517 (grafos ou dp)
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1610 (grafos)
+
+http://olimpiada.ic.unicamp.br/extras/provas/ProvaOBI2015_prog_f2n2.pdf - FILA - (estrutura de dados)
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1055 (não sei)
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1912 (não sei, talvez DP)
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1777 (usei busca binária mas deu WA)
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1203 (talvez grafos)
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1138 (fiz bruteforce, deu TLE)
+
+----------------------------------------------------------------
+Falar com o pessoal. Resolução não entendida:
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1148
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1023
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1030
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1247
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1148
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1065
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1059
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1060
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1067
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1071
+
+https://www.urionlinejudge.com.br/judge/pt/problems/view/1074
+
+-----------------------------------
+
+Dificuldade (ordenado pra fazer primeiro ao visualizar):
+
+http://br.spoj.com/problems/CARTOG11/ TEMPO DE EXEC, OTIMIZAR
+
+http://br.spoj.com/problems/SALDO/
+
+http://br.spoj.com/problems/JANELA13/
+
+http://br.spoj.com/problems/LUA/
+
+http://br.spoj.com/problems/MACACO/
+
+

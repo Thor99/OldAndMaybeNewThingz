@@ -1,0 +1,47 @@
+Problema dos Barbeiros:
+
+	Se resolve também com semáforos, assim como o dos filósofos
+
+	Veja mais aqui: http://www.ic.unicamp.br/~islene/mc514/barbeiro/barbeiro.pdf
+
+
+
+	5 cadeiras
+	
+	Sem clientes = 0;
+	
+	Sem barbeiro = 0
+
+	Sem mutex = 1;
+	
+	Barbeiro:
+
+	while(1){
+
+		DOWN(clientes);
+		DOWN(mutex);
+		UP(barbeiro);
+		UP(mutex);
+		corta_cabelo();
+	}
+
+	
+	Clientes:
+
+	DOWN(mutex);
+
+	if(clientes < 5){
+		UP(clientes);
+		UP(mutex);
+		DOWN(barbeiro);
+		corta_cabelo();
+	} else {
+
+		UP(mutex);
+	}
+
+
+
+
+	
+	

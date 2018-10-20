@@ -1,0 +1,52 @@
+Escalonador de processos/agendador:
+
+dentro do kernel tem um programa que é o escalonador de processos(ou agendador): Ele vai ver qual processo esta em execução.
+
+
+	Algoritmos usados:
+
+	round-robin:
+	
+		Ele usa o algoritmo de round-robin para botar um processo pra executar, depois parar, depois botar outro e etc.
+		Para alterar processos ele utiliza a tecnica da "troca de contextos", no qual se segue duas etapas:
+	
+		1. Salva registradores na RAM
+		2. carrega registradores do processo seguinte
+
+		Para calcular a eficiência do tempo total de processamento você usa os valores do tempo da troca de contexto e tempo de processamento.
+		Eficiencia em % = Tp / (Tp + Tc)
+
+	Sabendo o tempo de execução:
+
+		Sabendo o tempo de execução de processos, o processador irá executar o mais curto primeiro, pra não atrasar os outros. Não da pra fazer isso em sistemas 
+		operacionais de usuário pois o processador não sabe quanto tempo vai durar o processo, o usuário pode mata-lo a qualquer hora.
+
+	Prioridade:
+	 
+		Os processos são arranjados por prioridade, sendo os primeiros a serem executados pelo processador os com prioridade mais alta. Um problema disso é que o 
+		processo de maior prioridade pode ter um tempo de execução muito alta, deixando o resto dos processos atrasados. O nome desse fenômeno é Starvation/inanição
+
+		
+
+
+**
+
+chamada de sistema:
+
+uma das funções do sistema operacional é fornecer algumas abstrações, de modo que o usuário não tenha que se preocupar com coisas específicas e complexas, além de gerenciar recursos de hardware 
+(como memória e processamento).
+
+Podemos definir chamadas de sistemas como funções, porém, são funções específicas que invocam o sistema operacional para que este faça algo, como a criação de um processo.
+
+Geralmente, essas tarefas que pedimos para que o sistema operacional faça são bem complexas e que exijam uma permissão maior do sistema, pois geralmente lidam com ferramentas
+em baixo nível, como gerenciamento de memória, processos e outros recursos que o usuário comum não tem acesso.
+
+
+Usuário
+-------
+Kernel 
+-------
+hardware
+
+
+ 

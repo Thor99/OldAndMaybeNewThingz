@@ -1,0 +1,73 @@
+- Definição de Algoritmo computável: 
+	
+	- Sequência de passos para resolver um problema.
+
+- Como saber se um algoritmo é melhor que outro:
+
+	- Depende de dois fatores: Quantidade de passos de processamento e gasto de memória.
+
+	- Algoritmos polinomiais:
+
+		- Executados em tempo polinomial, em relação a entrada.
+	
+	- Algoritmos não-polinomiais:
+		
+		- Executados em tempo não-polinomial, em relação a entrada.
+
+	- Big O notation:
+
+		- Nome da notação para representar a eficiência de um algoritmo, baseado na expressão dele, polinomial ou não polinomial.
+
+		- O vem de ordem de eficiência.
+
+		- EX: O(n **2); o(n);
+
+		- Objetivo é sempre achar um O menor.
+
+		- Notação não liga para constantes, coeficientes (como no caso de 2n), e ignora elas:
+
+			- Ignorada pois não faz diferença quando o número de elementos (entrada) tende ao infinito.
+
+		- Existem algoritmos O(1), que não dependendem de n, do número de elementos:
+
+			- Sempre que se ter um numero constante de elementos, algoritmo será O(1).
+
+			- "scanf não é O(1), porque varia.", Braga, Anya.
+
+			- Constantes são interpretadas como 1. Ex: O(30) = O(1), de acordo com a notação.
+
+		- Ex: QSORT:
+			
+			- Pior caso: O(n log n)
+
+			- Caso médio (n log n)
+
+			- Melhor caso (n log n)
+
+		- EX: BUBBLE SORT:
+
+			- Melhor caso: O(n)
+
+			- Caso médio: O(n ** 2)
+
+			- Pior caso: O(n ** 2)
+
+	- Analise de algoritmos é sempre feita baseando-se no número infinito de elementos, para ver a essência:
+
+		- Sabendo disso, o melhor será o log(n), na maioria das vezes.
+
+	- Então para saber se um algoritmo é melhor que outro, você tende ao infinito o número de elementos.
+
+Problemas NP e P:
+
+	- Não conseguiram até agora provar que um problema NP pode virar um problema NP, porém, também não conseguiram refutar.
+	
+	- Provaram que se um NP pode virar um P, todos os NP's podem ser convertidos pra P.
+
+	- Provaram que todo NP pode ser transformado em outro NP.
+
+	
+
+
+
+

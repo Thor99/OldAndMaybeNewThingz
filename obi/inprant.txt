@@ -1,0 +1,7 @@
+4 5 4
+abcd
+aeiou
+c e
+b i
+a f
+d h

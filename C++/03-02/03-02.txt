@@ -1,0 +1,40 @@
+Diferença C e C++:
+
+  C++ tem bool, como tipo de variável.
+  Não precisa declarar variável no início da função, em C++.
+  Pode declarar variável sem especificar o tipo dela. (Vai descobrir o tipo ao usar "auto")
+
+Processo de compilação:
+
+  1) do arquivo de .cpp, irá para o preprocessador:
+
+    - Já faz parte do compilador, é sua primeira parte.
+
+    - O preprocessador só cuida dos comandos "#".
+
+    - #if, #else, #endif, #include... Não pode usar variáveis, somentre macros, que se cria com o #define.
+
+    - Editor de texto: Não entende nada de linguagem, só enxerga "#".
+
+  2) Do preprocessador, irá para o compilador:
+
+    - O compilador ira gerar um binário a partir de um arquivo preprocessado.
+
+    - Para usar funções de outros aqrvios, deve dar um include "nomedoarquivo.h".
+
+    - Um arquivo ".h" é um arquivo em que explicitará os headers das funções.
+
+    - Todos os .h precisam de um guarda
+
+    - Guarda: usar nas duas primeiras linhas: "#ifndef NOMEDOARQUIVO_H" e "define NOMEDOARQUIVO_H". E no final do arquivo: "#endif"
+
+    - O compilador só retorna erros quando o problema for no arquivo .cpp (sintaxe, referência não declarada no arquivo, ...)
+
+  3) Do compilador, irá para o linker:
+
+    - O linker gera um arquivo executável a partir do binário.
+
+    - O linker só retornará erros relacionados a ligações entre módulos diferentes (função declara mas não existente, função duplicada
+    ..)
+
+

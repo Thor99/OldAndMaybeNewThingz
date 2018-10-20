@@ -1,0 +1,156 @@
+Camada de redes:
+
+	- Propósito da camada 3 é conectar redes geograficamente distantes.
+
+	- Endereço IP (Internet protocol):
+
+		- Endereço virtual.
+
+		- Não precisa ser único no mundo.
+
+		- 4 bytes(IPv4).
+
+		- Cada parte tem campos com numeros de 0 a 255.
+
+		- Mais simples que o MAC.
+
+		- É virtual, ou seja, não depende de alguém definindo que cada dispositivo tem um endereço unico no mundo.
+
+		- Assim podemos usar endereços menores para representar nossa rede local, sem depender dos outros.
+
+		- Podemos configurar nós mesmos o endereço IP manualmente.
+
+		- Também podemos optar por definir o endereço IP automaticamente, usando um serviço chamado DHCP.
+
+		- DHCP:
+
+			- Serviço da camada de rede que serve para fornecer a configuração de rede ao dispositivo.
+
+			- Ao computador da rede ligar, ele envia uma mensagem broadcast, pedindo um endereço IP pro servidor DHCP.
+
+			- Então o servidor envia o endereço e o computador aceita. 
+
+		- O pacote IP se encontra dentro do quadro ethernet.
+
+		- Tamanho minimo é 20 bytes
+
+		- O pacote IP é composto de:
+			
+			- Versão: versão do IP, do protocolo
+
+			- IHL: Quantos bytes terá o cabeçalho.
+
+			- TOS: Tipo de serviço, TCP ou IP
+
+			- Total length: Tamanho total incluindo o tamanho dos dados. Cabeçalho + dados
+
+			- Identificação: Número unico que serve pra identificar cada mensagem que foi enviada
+
+			- IP flags: 3 bits: Bit do capeta, Bit pra saber se serão fragmentados os dados (Dados quebrados em diversas partes), Dizer se terão mais pedaços fragmentados(1), ou não(0)
+
+			- Fragment offset: Quantos dados vem antes do dado em questão.
+
+			- TTL: Número que serve pra evitar loops infinitos na rede. Cada vez que seu pacote IP é transferido para outro enlace, o TTL é decrementado. Normalmente, começa com 208. Ao chegar 				       em zero o pacote é descartado.
+
+			- Protocol: É um numero que diz o protocolo
+
+			- Header checksum: Numero que diz se o cabeçalho sofreu alteração
+
+			- Source address: IP remetente
+
+			- Destination adress: IP destinatário
+
+
+
+	- Máscara de subredes:
+
+		- Cada computador terá um endereço ip e a máscara de subrede, também com 4 bytes.
+
+		- Na hora em que se enviar ou receber uma mensagem, será verificado se os computadores fazem parte da mesma subrede.
+
+		- Como faz essa verificação:
+
+			- É aplicador uma operação "E"(AND) na máscara e no IP de um dos computadores, e compara esse resultado com o resultado da mesma operação que em outro computador.
+
+			- Se os dois resultados forem iguais, os computadores estão na mesma subrede.
+
+			
+	- Mas como pode haver comunicação entre diferentes enlaces:
+
+		- Existe o gateway:
+
+			- Faz a comunicação entre redes separadas.
+			
+			- Liga e interpreta diferentes configurações de rede, para que elas possam se comunicar.
+
+			- Podem ser também diferentes tipos de rede, como entre ethernet e fibra ótica.
+
+			- Um exemplo de gateway é o modem, que liga a rede local com a rede da internet.
+
+			- Precisa saber o endereço IP do gateway, e ele tem que ser da mesma subrede que a sua.
+
+			- Para mandar mensagem pra um computador de outra subrede, voce manda a mensagem pro gateway primeiro, e o gateway mandará mensagem pro destino.
+
+	- Roteadores:
+
+		- "Os Gateways da internet"
+
+		- Gateway que consegue achar o caminho para transferir os dados entre o seu e qualquer outro computador da internet.
+
+		- Mas como os roteadores acham esse caminho:
+
+			- Protocolo de comunicação de roteadores que permite saber a rota ideal para os dados trafegarem
+			
+			- O protocolo mais simples é o RIP (routing internet protocol):
+
+				- Criará uma tabela de roteamento em cada roteador.
+
+				- Essa tabela de roteamento dirá por qual porta do roteador algum bloco de IP se comunicou, isso a partir de sinais elétricos provenientes de computadores com um certo 				  bloco de IP, que chegam pelas portas.
+
+				- Os roteadores mandam suas tabelas pra outros roteadores que estão ligados diretamente a eles (mesmo que a distancias), e com isso os roteadores saberão por qual porta a 					  informação de outros blocos irá chegar.
+
+				- Então as tabelas de roteamento possuem tres elementos: Bloco de IP, porta pelo qual o endereço de IP se comunica com o roteador, e custo, que é um valor que se visa ser o 					  minimo, minimiza-lo.
+
+				- O roteador visa o caminho que possui menor custo.
+
+			
+
+
+	- Os IP's da internet tem que ser únicos. (IP's da INTERNET tem que sewr únicos).	
+
+	- A organização ARIN distribue blocos de IP por país.
+
+	- Cabe ao comitê da internet de cada país distribuir o bloco entre os provedores.
+
+	- DNS:
+
+		- Domain name service.
+
+		- Traduz os nomes para endereço IP.
+
+		- DNS local:
+		
+			- local diz o nome de seu computador.
+			
+			- ping -4 "nome de seu pc" diz o seu endereço IP.
+
+		- DNS raiz:
+
+			- Existem 13 a 15 pelo mundo.
+
+			- Vai te indicar pra um servidor DNS que sabe o endereço IP do domínio em questão.  
+
+			- Voce manda uma requisição DNS para seu provedor (como a UOL), e ela tem um cash dos sites mais comuns e te manda o endereço IP. Casa ela não saiba o endereço, pergunta pro DNS 				  raiz.  
+	
+		
+	                       
+
+
+
+ 
+
+
+			
+
+
+					

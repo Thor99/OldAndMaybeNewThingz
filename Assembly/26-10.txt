@@ -1,0 +1,123 @@
+EXERCICIOS:
+
+1)
+
+int f(int x)
+{
+	int res = 0;
+	while(x-- > 0)
+	{
+		res += x;
+	}
+
+	return res;
+}
+
+
+push ebp
+mov ebp, esp
+
+mov eax, 0
+mov ebx, dword ptr[ebp+8] ; int x
+
+lower:
+   cmp ebx, 0
+   jle end
+   sub ebx,1
+   add eax, ebx
+   jmp lower
+end:
+	mov esp, ebp
+	pop ebp
+	ret 0
+
+
+
+
+
+
+
+
+
+
+
+
+2)
+
+void g(int* v, int n)
+{
+	for(int i = 0; i < n; i++)
+	{
+		v[i] = i * i;
+	}
+}
+
+
+push ebp
+mov ebp, esp
+
+mov ecx,0 ; i = 0
+mov ebx, dword ptr[ebp+12] ; int n
+mov edx, dword ptr[ebp+8] ; int* v
+
+lower:
+   cmp ecx, ebx
+   jge end
+   mov eax, ecx ; eax = ecx
+   imul eax, eax ; eax = ecx * ecx
+   mov dword ptr[edx + ecx * 4], eax ; v[i] = i * i
+   add ecx, 1
+   jmp lower
+end:
+	mov esp, ebp
+	pop ebp
+	ret 0
+
+
+
+
+
+
+
+
+
+
+
+
+
+3)
+
+int main()
+{
+	int v[3] = {1, 2, 3};
+	g(v, 3);
+
+	return f(v[0]);
+}
+
+
+
+push ebp
+mov ebp, esp
+
+push 3
+push 2
+push 1
+
+push 3 ; n
+
+; v
+mov ebx, ebp
+sub ebx, 12
+push ebx
+ 
+call _g
+
+push dword ptr[ebp - 12]
+call _f 
+
+mov esp, ebp
+pop ebp
+ret 0
+
+

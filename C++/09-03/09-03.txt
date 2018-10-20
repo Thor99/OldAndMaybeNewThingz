@@ -1,0 +1,16 @@
+Sobrecarga de funções:
+
+    - Capacidade de criar mais de uma função com o mesmo nome, desde que recebam parametros diferentes.
+
+    - Em C++ tem, em C não.
+
+Double vs Float:
+
+    - Um número só com ponto é um double. Ex: 3.5
+
+    - Para ser um float, tem que botar o número seguido da letra "f". Ex: 3.5f
+
+
+Sobrecarga de operadores:
+
+    - Redefinir os operadores padrões da linguagem, para eles terem uma nova funcionalidade.

@@ -1,0 +1,22 @@
+Padding:
+	As variaveis para serem eficientemente acessadas, precisam estar alinhadas num endereço multiplo do seu tamanho de memória
+	
+	ex: int tem que estar alinhado num endereço multiplo de 4.
+	
+	O compilador enche os bytes com padding, para poder acessar as variaveis em um endereço que concorde com os múltiplos.
+
+	ex:
+
+		struct X
+		{
+			int a = 1;
+			char b = 2;
+		};
+
+		0        4		5		    8
+
+			int    char    {padding}  int
+
+	O padding é um valor aleatório
+
+

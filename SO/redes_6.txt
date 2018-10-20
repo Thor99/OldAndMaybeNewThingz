@@ -1,0 +1,7 @@
+Apresentação:
+
+	- Pode transformar os dados antes deles serem enviados.
+    
+    	- A camada de apresentação transforma os dados enviados em dados criptografados.
+    
+    	- Faz isso para não ter os dados roubados em enlace local.

@@ -1,0 +1,26 @@
+Capitulo 1:
+
+	Sistema é dividido em duas partes, modo usuário e modo kernel
+
+	Núcleo do sistema operacional, onde os serviços do SO são implementados e executados.
+
+	kernel é a parte do programa que implementa o sistema operacional.	
+
+	Aplicativos funcionam do modo usuário
+
+	Os serviços/códigos do sistema operacional são executados no modo kernel
+
+	Objetivos do sistema operacional: Abstrair o hardware e fazer a multiplexação dos recursos, dividir os recursos entre varios processos e usuários
+
+	Tipos de kernel: monolítico, micro-kernel, exokernel
+
+		Monolítico: Ocorre uma chamada de função direta no serviço, fazendo com que se torne mais rápido. Tem um programa único, com isso, se der problema em um processo, todo o kernel ficará comprometido. (Linux usa)
+
+		Microkernel: É só um gerenciador de mensagens, uma "caixa de correio". Temos uma camada de abstração do hardware e um serviço de troca de mensagens. Isso funciona assim: Se envia uma mensagem para algum serviço que a partir daí fará algo em algum processo. Com isso, o kernel fica menor porém mais lento. (windows). Processo --> kernel(manda mensagem pro serviço) --- > serviço ---> processo
+		
+		Exokernel: Kernel é somente uma camada de abstração de hardware. Todas as chamadas de função do sistema operacional são feitas no modo usuário. Não existe nenhum assim.
+
+Capitulo 2:
+
+	Estudar os tres problemas de semaforo, produtores e consumidores, barbeiro e filósofo jantando
+		     

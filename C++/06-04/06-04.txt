@@ -1,0 +1,66 @@
+LEMBRAR: C++ LE TIPOS DA DIREITA PRA ESQUERDA
+
+static:
+
+  - Uso no escopo global:
+
+    - Ao botar static na declaração da variável, passa a ser uma variável global só para aquele arquivo.
+
+  - Uso no escopo de uma função:
+
+    - Variável tem tempo de vida global, mas escopo local
+
+    - Variável só é criada na primeira vez que é chamada.
+
+  - Uso no membro de classe (classe ou struct):
+
+    - Váriavel será compartilhada por todas as instancias da classe.
+
+    - Ou seja, se muda o valor em uma instancia, muda de todas.
+
+    - Quando bota uma função como static, ela retorna um valor independente da instancia. Ou seja, não precisa ter instancia pra chamar essa função.
+
+
+const:
+
+  - Váriaveis:
+
+    - O valor da variável, depois de atribuido, não pode ser alterado.
+
+    - Tem que obrigatoriamente atribuir o valor na hora da declaração.
+
+    - Ponteiros:
+
+      - O ponteiro pode ser constante, e sempre apontar pro mesmo elemento, mas esse elemento é variável:
+
+        - int * const p = &x;
+
+      - O valor do elemento que o ponteiro aponta é constante, não mudará:
+
+        - int const * p = &x;
+
+      - O ponteiro e o valor que ele aponta são constantes.
+
+        - int const * const p = &x;
+
+  - Métodos(funções de uma classe):
+
+    - Não pode alterar os atibutos da classe.
+
+    - Bota a palavra const depois dos parametros recebidos.
+
+    - Precisa ter a palavra const escrita tanto no .h quanto no .cpp
+
+    - ex: int f() const;
+
+    - A const também pode servir para ver sobrecarga:
+
+      - int f() const;
+
+      - int f();
+
+      - Se chamarmos x.f(); ele chamara o método de acordo com a instancia que chama;
+
+      - Se a instancia for const, chamará a primeira declaração de variável
+
+      - Se não for const, chamará a segunda declaração

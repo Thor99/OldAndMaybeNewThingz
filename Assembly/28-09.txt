@@ -1,0 +1,92 @@
+Pilha de execução:
+	
+	EIP: instruction pointer
+
+		Aponta para a instrução atual que o processador irá executar.
+
+	EBP: base pointer
+
+		Aponta para a base da pilha, naquela chamada de função específica.
+
+	ESP: stack pointer
+
+		Aponta para o topo da pilha.
+
+	A pilha cresce em direção contrária aos endereços. 
+
+	A calling convention determina como os dados são organizados na pilha.
+
+	void f(){
+		int x;
+		int y;
+		g(1, 2);
+		.
+		.
+		.
+	}
+
+	Padrão de C da calling convention, baseado no exemplo de código acima:
+
+		ESP
+		Endereço de retorno (ponto atual da execução)
+		1
+		2
+		y
+		x
+		EBP
+
+
+	Padrão de C da calling convention, geral:
+
+		.
+		.
+		var local <-- ESP
+		EBP anterior  <-- EBP
+		endereço de retorno
+		arg1
+		arg2
+		arg3
+		variáveis locais
+		EBP anterior
+
+	Variáveis locais: pilha
+
+	Variáveis globais: static
+
+	Variáveis alocadas com malloc: heap
+
+
+	Prólogo:
+
+		É o código que tem em todo início de função.
+
+		estrutura:
+
+			push ebp
+			mov ebp, esp
+
+		push:
+
+			sub esp, 4
+			mov [esp], ebp
+
+		obs: [esp] -> conteudo do endereço apontado por esp
+
+
+	Epílogo:
+
+		É o código que tem em todo final de função.
+
+		estrutura: 
+
+			mov esp, ebp
+			pop ebp
+
+		pop:
+
+			mov ebp, [esp]
+			add esp, 4
+
+		obs: [esp] -> conteudo do endereço apontado por esp
+
+	OBS: Valor de retorno sempre em EAX

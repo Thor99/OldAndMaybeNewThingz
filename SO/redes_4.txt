@@ -1,0 +1,66 @@
+Transporte:
+
+
+	- Garante que seus dados serão transportados.
+
+	- Garante a entrega de sua mensagem
+
+	- Essa é a única camada que dá garantia da entrega.
+
+	- Vamos estudar 2 protocolos: TCP e UDP.
+
+	- TCP:
+
+		- Garante a entrega dos dados.
+
+		- Os dados chegam na ordem de envio.
+
+		- Estabelece conexão (Inicia e termina um canal de comunicação, o que permite saber com quem esta falando e quando termina a comunicação).
+
+		- cabeçalho de 20 bytes
+
+      		- latencia alta (tempo de entrega dos dados)
+
+     		- Será utilizado em serviços no qual tem que ter garantia que os dados vão chegar, e na ordem certa. exs: Downloads e Bancos
+       
+      		- No cabeçalho tem o que se chama de "janela deslizante", que agrupa 3 dados. O TCP irá enviar esses três dados pro destino e receberá de volta uma mensagem: ACK + dados. a janela só anda 			  ao receber o ACK de todos os dados.
+      
+      		- No cabeçalho fica no chamado "acknowledgment".
+      
+      		- Os dados podem chegar repetidos, e com isso será descartado a repetição.
+      
+      		- Essa "janela" que faz com que a latencia seja alta, mas também garante a entrega.
+
+      		- A comunicação é feita como:
+      
+      			- Temos dois computadores, A e B.
+            
+            		- A enviara "syn" pra B.
+            
+          		- B responderá com "ACK".
+            
+            		- A partir disso se estabelecerá uma comunicação.	
+
+            		- Para terminar a conexão, A envia um "FIN" e B responde com "ACK".	
+
+
+
+	- UDP:
+
+		- Pode entregar os dados corretos ou não entrega. ( Ou ele vai entregar os dados corretos ou perde os dados.)
+
+		- Dados podem chegar fora de ordem pois durante a rota pode haver uma troca de caminho e um dado chegar antes que o outro.
+
+		- Não estabelece uma comunicação.
+
+		+ cabecalho de 8 bytes
+
+   		+ latencia baixa (Rápida entrega de dados).
+
+    		- É usado em serviços com o skype por exemplo. (Pode dar somente pequenas falhas no áudio, mas chega mais rápido). Usado também em jogos de tiro, que necessitam de rapidez.
+
+
+
+
+
+

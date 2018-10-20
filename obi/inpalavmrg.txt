@@ -1,0 +1,9 @@
+8
+a
+belo
+fiNo
+Cruz
+flor
+batata
+abracadabra
+aaaabc
